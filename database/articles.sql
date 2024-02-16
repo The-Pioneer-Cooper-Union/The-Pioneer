@@ -8,7 +8,9 @@ CREATE TABLE articles(
     user_id bigint not null,
     submission_date date not null,
     article_status article_status not null,
+    picture varchar(255),
     media_url varchar(255),
+
     PRIMARY KEY (article_id),
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
