@@ -1,29 +1,32 @@
 package com.pioneer.api.data;
-import jakarta.persistance.*;
+import jakarta.persistence.*;
+
+import java.util.Date;
 
 @Entity
-@Table(num="donation")
+@Table(name="donation")
 public class Donation {
     @Id
     @Column(name="donation_id", unique = true, nullable = false)
     private Long DonationId;
-    
+
+    @ManyToOne
     @Column(name="user_id", nullable = false)
-    private Long UserId;
+    private User user;
 
     @Column(name="donation_comment")
     private String donation_comment;
 
     @Column(name="donation_date", nullable = false)
+    @Temporal(TemporalType.DATE)
     private Date donation_date;
 
     @Column(name="donation_amount", nullable = false)
     private Long donation_amount;
 
-    public Donation(Long DonationId, Long UserId, String donation_comment, 
-    Date donation_date, Long donation_amount) {
-        this.DonationId = DonationId;
-        this.UserId = UserId;
+    public Donation(Long donationId, User user, String donation_comment, Date donation_date, Long donation_amount) {
+        DonationId = donationId;
+        this.user = user;
         this.donation_comment = donation_comment;
         this.donation_date = donation_date;
         this.donation_amount = donation_amount;
@@ -41,12 +44,12 @@ public class Donation {
         this.DonationId = DonationId;
     }
 
-    public Long getUserId() {
-        return UserId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long UserId) {
-        this.UserId = UserId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public String getDonationComment() {
