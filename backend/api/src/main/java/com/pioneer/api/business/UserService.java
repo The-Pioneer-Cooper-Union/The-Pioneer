@@ -21,6 +21,13 @@ public class UserService {
         return userRepository.save(user);
     }
 
+    public void deleteUser(Long userId){
+        userRepository.deleteById(userId);
+    }
+
+    public User updateUserInfo(User user) {
+        return userRepository.save(user);
+    }
     public Optional<User> findUserByUserId(Long userId) {
         return userRepository.findUserByUserId(userId);
     }
