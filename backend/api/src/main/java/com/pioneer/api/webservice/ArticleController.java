@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,14 +29,33 @@ public class ArticleController {
 
     @GetMapping("/search")
     public ResponseEntity<List<Article>> searchArticles(@RequestParam String title) {
-        List<Article> articles = articleService.searchArticlesByTitle(title);
-        return ResponseEntity.ok(articles);
+        try {
+            List<Article> articles = articleService.searchArticlesByTitle(title);
+            return ResponseEntity.ok(articles);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error searching articles by title", e);
+        }
+    }
+
+    @GetMapping("/{category}")
+    public ResponseEntity<List<Article>> getArticlesByCategory(@PathVariable String category){
+        try {
+            List<Article> articles = articleService.findArticleByCategory(category);
+            return ResponseEntity.ok(articles);
+        } catch (Exception e){
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error searching articles by title", e);
+        }
+
     }
 
     @GetMapping("/user/{username}")
     public ResponseEntity<List<Article>> getArticlesByUsername(@PathVariable String username) {
-        List<Article> articles = articleService.findArticlesByUsername(username);
-        return ResponseEntity.ok(articles);
+        try {
+            List<Article> articles = articleService.findArticlesByUsername(username);
+            return ResponseEntity.ok(articles);
+        } catch (Exception e) {
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Error retrieving articles by username", e);
+        }
     }
 
     @PostMapping("/create-article")
@@ -60,7 +80,6 @@ public class ArticleController {
     @PutMapping("/update-article/{articleId}")
     public ResponseEntity<String> updateArticle(@PathVariable Long articleId, @RequestBody Article article) {
         try {
-            // Set the userId of the user object to ensure it updates the existing user
             article.setArticleId(articleId);
             articleService.updateArticleInfo(article);
             return ResponseEntity.status(HttpStatus.OK).body("Article Info updated successfully");
