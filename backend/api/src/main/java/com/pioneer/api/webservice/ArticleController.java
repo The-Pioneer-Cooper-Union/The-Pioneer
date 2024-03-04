@@ -1,6 +1,7 @@
 package com.pioneer.api.webservice;
 
 import com.pioneer.api.business.ArticleService;
+import com.pioneer.api.business.CommentService;
 import com.pioneer.api.data.Article;
 import com.pioneer.api.data.Donation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -15,12 +17,26 @@ import java.util.Optional;
 public class ArticleController {
 
     private final ArticleService articleService;
+    private final CommentService commentService;
 
     @Autowired
-    public ArticleController(ArticleService articleService) {
+    public ArticleController(ArticleService articleService, CommentService commentService) {
         this.articleService = articleService;
+        this.commentService = commentService;
     }
 
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Article>> searchArticles(@RequestParam String title) {
+        List<Article> articles = articleService.searchArticlesByTitle(title);
+        return ResponseEntity.ok(articles);
+    }
+
+    @GetMapping("/user/{username}")
+    public ResponseEntity<List<Article>> getArticlesByUsername(@PathVariable String username) {
+        List<Article> articles = articleService.findArticlesByUsername(username);
+        return ResponseEntity.ok(articles);
+    }
 
     @PostMapping("/create-article")
     public ResponseEntity<String> createArticle(@RequestBody Article article) {
@@ -62,6 +78,12 @@ public class ArticleController {
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
+    }
+
+    @GetMapping("/{articleId}/comment-count")
+    public ResponseEntity<Long> getCommentCountByArticleId(@PathVariable Long articleId) {
+        Long commentCount = commentService.countCommentsByArticleId(articleId);
+        return ResponseEntity.ok(commentCount);
     }
 
 }
