@@ -38,8 +38,13 @@ public class ArticleService {
     public List<Article> findArticlesByUsername(String username) {
         return articleRepository.findByUsername(username);
     }
+
+    public  List<Article> findArticleByCategory(String category){
+        return articleRepository.findByCategory(category);
+    }
+
     public List<Article> searchArticlesByTitle(String title) {
-        return articleRepository.findByTitleContainingIgnoreCase(title);
+        return articleRepository.findByTitle(title);
     }
 
     public void updateArticleInfo(Article article){
