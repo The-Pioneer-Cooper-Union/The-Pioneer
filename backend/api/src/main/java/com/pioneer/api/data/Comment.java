@@ -8,6 +8,7 @@ import java.util.Date;
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_id", unique = true, nullable = false)
     private Long commentId;
 
     @ManyToOne
@@ -28,6 +29,12 @@ public class Comment {
     @Column(name="parent_comment_id")
     private Long parentCommentId;
 
+    @Transient
+    private Long userId;
+
+    @Transient
+    private Long articleId;
+
 
     public Comment(Long commentId, Article article, User user, String commentText, Date commentDate, Long parentCommentId) {
         this.commentId = commentId;
@@ -36,6 +43,22 @@ public class Comment {
         this.commentText = commentText;
         this.commentDate = commentDate;
         this.parentCommentId = parentCommentId;
+    }
+
+    public Long getArticleId() {
+        return articleId;
+    }
+
+    public void setArticleId(Long articleId) {
+        this.articleId = articleId;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public Comment() {

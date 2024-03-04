@@ -2,7 +2,6 @@ package com.pioneer.api.webservice;
 
 import com.pioneer.api.business.UserService;
 import com.pioneer.api.data.User;
-import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -10,13 +9,15 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
+
 @RestController
-public class WebserviceController {
+@RequestMapping("/user")
+public class UserController {
 
     private final UserService userService;
 
     @Autowired
-    public WebserviceController(UserService userService) {
+    public UserController(UserService userService) {
         this.userService = userService;
     }
 

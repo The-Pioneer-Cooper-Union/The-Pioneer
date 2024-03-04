@@ -8,17 +8,18 @@ import java.util.Date;
 public class Article {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "article_id", unique = true, nullable = false)
     private Long articleId;
 
     @Column(name="title", unique = true, nullable = false)
     private String title;
 
-    @Lob
     @Column(name="content", nullable = false)
     private String content;
 
-    @Column(name="user_id", nullable = false)
-    private Long userId;
+    @ManyToOne
+    @JoinColumn(name="user_id", nullable = false)
+    private User user;
 
     @Column(name="submission_date", nullable = false)
     @Temporal(TemporalType.DATE)
@@ -36,11 +37,14 @@ public class Article {
     @Column(name="category", nullable = false)
     private String category;
 
-    public Article(Long articleId, String title, String content, Long userId, Date submissionDate, String articleStatus, String picture, String mediaUrl, String category) {
+    @Transient
+    private Long userId;
+
+    public Article(Long articleId, String title, String content, User user, Date submissionDate, String articleStatus, String picture, String mediaUrl, String category) {
         this.articleId = articleId;
         this.title = title;
         this.content = content;
-        this.userId = userId;
+        this.user = user;
         this.submissionDate = submissionDate;
         this.articleStatus = articleStatus;
         this.picture = picture;
@@ -52,6 +56,13 @@ public class Article {
 
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 
     public Long getArticleId() {
         return articleId;
@@ -77,12 +88,12 @@ public class Article {
         this.content = content;
     }
 
-    public Long getUserId() {
-        return userId;
+    public User getUser() {
+        return user;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public Date getSubmissionDate() {

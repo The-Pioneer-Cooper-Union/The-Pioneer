@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 @Table(name="users")
 public class User {
     @Id
-    @Column(name="user_id")
+    @Column(name="user_id", unique = true, nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userId;
 
