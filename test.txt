@@ -85,3 +85,20 @@ curl -X PUT http://localhost:8080/donation/update-donation/1 \
 4. Delete Donation:
 
 curl -X DELETE http://localhost:8080/donation/delete-donation/1
+
+%%%% Search by title %%%%
+
+curl -X GET "http://localhost:8080/article/search?title=robot"
+
+
+%%%% Search article by username %%%%
+
+curl -X GET "http://localhost:8080/article/user/vlad.bershchanskiy"
+
+%%%% Search comment by username %%%%
+
+curl -X GET "http://localhost:8080/comment/user/vlad.bershchanskiy"
+
+%%%% Comment Count per Article %%%%
+
+curl -X GET "http://localhost:8080/article/1/comment-count"

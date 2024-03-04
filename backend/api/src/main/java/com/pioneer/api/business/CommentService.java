@@ -41,6 +41,13 @@ public class CommentService {
         commentRepository.deleteById(commentId);
     }
 
+    public List<Comment> findCommentUser (String username){
+        return commentRepository.findByUsername(username);
+    }
+
+    public Long countCommentsByArticleId(Long articleId) {
+        return commentRepository.countByArticleId(articleId);
+    }
     public void updateCommentInfo(Comment comment) {
         User user = userRepository.findById(comment.getUserId())
                 .orElseThrow(() -> new RuntimeException("User not found with id " + comment.getUserId()));

@@ -54,13 +54,18 @@ public class CommentController {
     @PutMapping("/update-comment/{commentId}")
     public ResponseEntity<String> updateComment(@PathVariable Long commentId, @RequestBody Comment comment) {
         try {
-            // Set the userId of the user object to ensure it updates the existing user
             comment.setCommentId(commentId);
             commentService.updateCommentInfo(comment);
             return ResponseEntity.status(HttpStatus.OK).body("Comment Info updated successfully");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error updating Comment Info: " + e.getMessage());
         }
+    }
+
+    @GetMapping("/user/{username}")
+    public ResponseEntity<List<Comment>> findComment(@PathVariable String username){
+        List<Comment> comment = commentService.findCommentUser(username);
+        return ResponseEntity.ok(comment);
     }
 
 }
