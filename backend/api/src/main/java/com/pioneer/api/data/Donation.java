@@ -7,41 +7,46 @@ import java.util.Date;
 @Table(name="donation")
 public class Donation {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="donation_id", unique = true, nullable = false)
-    private Long DonationId;
+    private Long donationId;
 
     @ManyToOne
-    @Column(name="user_id", nullable = false)
+    @JoinColumn(name="user_id", nullable = false)
     private User user;
 
     @Column(name="donation_comment")
-    private String donation_comment;
+    private String donationComment;
 
     @Column(name="donation_date", nullable = false)
     @Temporal(TemporalType.DATE)
-    private Date donation_date;
+    private Date donationDate;
 
     @Column(name="donation_amount", nullable = false)
-    private Long donation_amount;
+    private Long donationAmount;
 
-    public Donation(Long donationId, User user, String donation_comment, Date donation_date, Long donation_amount) {
-        DonationId = donationId;
+    @Transient
+    private Long userId;
+
+    public Donation(Long donationId, User user, String donationComment, Date donationDate, Long donationAmount) {
+        this.donationId = donationId;
         this.user = user;
-        this.donation_comment = donation_comment;
-        this.donation_date = donation_date;
-        this.donation_amount = donation_amount;
+        this.donationComment = donationComment;
+        this.donationDate = donationDate;
+        this.donationAmount = donationAmount;
     }
 
     public Donation() {
 
     }
 
+
     public Long getDonationId() {
-        return DonationId;
+        return donationId;
     }
 
-    public void setDonationId(Long DonationId) {
-        this.DonationId = DonationId;
+    public void setDonationId(Long donationId) {
+        this.donationId = donationId;
     }
 
     public User getUser() {
@@ -53,27 +58,34 @@ public class Donation {
     }
 
     public String getDonationComment() {
-        return donation_comment;
+        return donationComment;
     }
 
-    public void setDonationComment(String donation_comment) {
-        this.donation_comment = donation_comment;
+    public void setDonationComment(String donationComment) {
+        this.donationComment = donationComment;
     }
 
     public Date getDonationDate() {
-        return donation_date;
+        return donationDate;
     }
 
-    public void setDonationDate(Date donation_date) {
-        this.donation_date = donation_date;
+    public void setDonationDate(Date donationDate) {
+        this.donationDate = donationDate;
     }
 
     public Long getDonationAmount() {
-        return donation_amount;
+        return donationAmount;
     }
 
-    public void setDonationAmount(Long donation_amount) {
-        this.donation_amount = donation_amount;
+    public void setDonationAmount(Long donationAmount) {
+        this.donationAmount = donationAmount;
     }
 
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
 }

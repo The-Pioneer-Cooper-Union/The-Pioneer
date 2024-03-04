@@ -25,8 +25,8 @@ public class UserService {
         userRepository.deleteById(userId);
     }
 
-    public User updateUserInfo(User user) {
-        return userRepository.save(user);
+    public void updateUserInfo(User user) {
+        userRepository.save(user);
     }
     public Optional<User> findUserByUserId(Long userId) {
         return userRepository.findUserByUserId(userId);
