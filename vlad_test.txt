@@ -1,0 +1,340 @@
+%%%% User %%%%
+
+1. Create User:
+
+# User 1
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "vlad.bershchanskiy", "email": "vlad.bershchanskiy@cooper.edu", "passwordHash": "password1", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic1.png", "shortBio": "Adventurous soul seeking connection on The Pioneers website."}'
+
+# User 2
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "calder.leppitsch", "email": "calder.leppitsch@cooper.edu", "passwordHash": "password2", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic2.png", "shortBio": "Foodie exploring the world of flavors on The Pioneers website."}'
+
+# User 3
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "raymond.chi", "email": "raymond.chi@cooper.edu", "passwordHash": "password3", "userType": "STUDENT", "major": "ELECTRICAL ENGINEERING", "graduationYear": 2025, "profilePic": "profile_pic3.png", "shortBio": "Bookworm diving into stories and searching for a literary companion on The Pioneers website."}'
+
+# User 4
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "ari.gebhardt", "email": "ari.gebhardt@cooper.edu", "passwordHash": "password4", "userType": "STUDENT", "major": "ELECTRICAL ENGINEERING", "graduationYear": 2025, "profilePic": "profile_pic4.png", "shortBio": "Music enthusiast harmonizing love notes on The Pioneers website."}'
+
+# User 5
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "christopher.hong", "email": "christopher.hong@cooper.edu", "passwordHash": "password5", "userType": "FACULTY", "graduationYear": 2013, "profilePic": "profile_pic5.png", "shortBio": "Nature lover embracing the outdoors and searching for a partner in crime on The Pioneers website."}'
+
+# User 6
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "jason.chen", "email": "jason.chen@cooper.edu", "passwordHash": "password6", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic6.png", "shortBio": "Fitness fanatic sweating it out and looking for a workout buddy on The Pioneers website."}'
+
+# User 7
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "michal.katz", "email": "michal.katz@cooper.edu", "passwordHash": "password7", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic7.png", "shortBio": "Tech geek navigating the digital realm, seeking a connection on The Pioneers website."}'
+
+# User 8
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "benji.meiner", "email": "benji.meiner@cooper.edu", "passwordHash": "password8", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic8.png", "shortBio": "Artistic spirit painting a canvas of love on The Pioneers website."}'
+
+# User 9
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "kanghyuk.lee", "email": "kanghyuk.lee@cooper.edu", "passwordHash": "password9", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic9.png", "shortBio": "Travel enthusiast exploring new horizons and searching for a travel companion on The Pioneers website."}'
+
+# User 10
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "sama.osmani", "email": "sama.somani@cooper.edu", "passwordHash": "password10", "userType": "STUDENT", "major": "CIVIL ENGINEERING", "graduationYear": 2025, "profilePic": "profile_pic10.png", "shortBio": "Movie buff screening for a co-star in life\'s grand production on The Pioneers website."}'
+# User 1
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "vlad.bershchanskiy", "email": "vlad.bershchanskiy@cooper.edu", "passwordHash": "password1", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic1.png", "shortBio": "Adventurous soul seeking connection on The Pioneers website."}'
+
+# User 2
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "calder.leppitsch", "email": "calder.leppitsch@cooper.edu", "passwordHash": "password2", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic2.png", "shortBio": "Foodie exploring the world of flavors on The Pioneers website."}'
+
+# User 3
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "raymond.chi", "email": "raymond.chi@cooper.edu", "passwordHash": "password3", "userType": "STUDENT", "major": "ELECTRICAL ENGINEERING", "graduationYear": 2025, "profilePic": "profile_pic3.png", "shortBio": "Bookworm diving into stories and searching for a literary companion on The Pioneers website."}'
+
+# User 4
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "ari.gebhardt", "email": "ari.gebhardt@cooper.edu", "passwordHash": "password4", "userType": "STUDENT", "major": "ELECTRICAL ENGINEERING", "graduationYear": 2025, "profilePic": "profile_pic4.png", "shortBio": "Music enthusiast harmonizing love notes on The Pioneers website."}'
+
+# User 5
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "christopher.hong", "email": "christopher.hong@cooper.edu", "passwordHash": "password5", "userType": "FACULTY", "graduationYear": 2013, "profilePic": "profile_pic5.png", "shortBio": "Nature lover embracing the outdoors and searching for a partner in crime on The Pioneers website."}'
+
+# User 6
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "jason.chen", "email": "jason.chen@cooper.edu", "passwordHash": "password6", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic6.png", "shortBio": "Fitness fanatic sweating it out and looking for a workout buddy on The Pioneers website."}'
+
+# User 7
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "michal.katz", "email": "michal.katz@cooper.edu", "passwordHash": "password7", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic7.png", "shortBio": "Tech geek navigating the digital realm, seeking a connection on The Pioneers website."}'
+
+# User 8
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "benji.meiner", "email": "benji.meiner@cooper.edu", "passwordHash": "password8", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic8.png", "shortBio": "Artistic spirit painting a canvas of love on The Pioneers website."}'
+
+# User 9
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "kanghyuk.lee", "email": "kanghyuk.lee@cooper.edu", "passwordHash": "password9", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "profile_pic9.png", "shortBio": "Travel enthusiast exploring new horizons and searching for a travel companion on The Pioneers website."}'
+
+# User 10
+curl -X POST http://localhost:8080/user/create-user \
+-H "Content-Type: application/json" \
+-d '{"username": "sama.osmani", "email": "sama.somani@cooper.edu", "passwordHash": "password10", "userType": "STUDENT", "major": "CIVIL ENGINEERING", "graduationYear": 2025, "profilePic": "profile_pic10.png", "shortBio": "Movie buff screening for a co-star in life\'s grand production on The Pioneers website."}'
+
+2. Get User Info:
+
+# User 1
+curl -X GET http://localhost:8080/user/user-info/1
+
+3. Update User:
+
+# Update User "vlad.bershchanskiy"
+curl -X PUT http://localhost:8080/user/update-user/1 \
+     -H "Content-Type: application/json" \
+     -d '{"username": "vlad.bershchanskiy", "email": "vlad.bershchanskiy@gmail.com", "passwordHash": "updatedPasswordHash", "userType": "STUDENT", "major": "MECHANICAL ENGINEERING", "graduationYear": 2024, "profilePic": "updatedPath/to/profile_pic.jpg", "shortBio": "Updated short bio about the user."}'
+
+4. Delete User:
+
+curl -X DELETE http://localhost:8080/user/delete-user/1
+
+%%%% Article %%%%
+
+1. Create Article:
+
+# Article 1
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "Scientists Discover New Species of Glowing Octopus in the Depths of the Pacific", "content": "Scientists aboard a deep-sea exploration vessel have made an extraordinary discovery, capturing footage of a previously unknown species of octopus emitting a mesmerizing bioluminescent glow. The newfound cephalopod, tentatively named Luminara Octopoda, is believed to reside in the darkest depths of the Pacific Ocean, showcasing a stunning display of light patterns to communicate and navigate in the pitch-black environment.", "userId": 1, "submissionDate": "2023-01-25T12:00:00", "articleStatus": "APPROVED", "picture": "picture1.png", "mediaUrl": "youtube.com", "category": "TRAVEL"}'
+
+# Article 2
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "Robot Baristas Take Over Coffee Shops, Brewing Up a Caffeinated Revolution", "content": "In a bold move toward automation, coffee enthusiasts are now greeted by friendly robot baristas in avant-garde coffee shops. These cutting-edge machines not only flawlessly craft the perfect brew but also engage customers with personalized banter and recommendations. The transition to robot baristas promises efficiency and consistency, sparking a caffeinated revolution in the world of coffee service.", "userId": 1, "submissionDate": "2023-02-09T12:00:00", "articleStatus": "APPROVED", "picture": "picture2.png", "mediaUrl": "youtube.com", "category": "TECHNOLOGY"}'
+
+# Article 3
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "Worlds First Floating City Set to Launch in 2025, Promising a Sustainable Utopia", "content": "Architects and engineers are collaborating on an ambitious project to launch the worlds inaugural floating city by 2025. This eco-friendly metropolis, designed to be self-sustaining, will harness renewable energy sources, implement advanced waste management systems, and incorporate green spaces throughout. The floating city aims to set a new standard for sustainable urban living and combat the challenges posed by rising sea levels.", "userId": 1, "submissionDate": "2023-03-01T12:00:00", "articleStatus": "APPROVED", "picture": "picture3.png", "mediaUrl": "youtube.com", "category": "NEWS"}'
+
+# Article 4
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "Unicorn Sanctuary Opens in Magical Forest, Welcoming Mythical Creatures", "content": "Enchanting the hearts of fantasy lovers worldwide, a magical forest sanctuary has opened its gates to mythical creatures, including unicorns. This ethereal haven provides a protected environment for these legendary beings, allowing them to roam freely without fear of human interference. Visitors are treated to the sight of unicorns grazing peacefully in a fairytale-like setting, fostering a sense of wonder and magic.", "userId": 3, "submissionDate": "2023-04-12T12:00:00", "articleStatus": "APPROVED", "picture": "picture4.png", "mediaUrl": "youtube.com", "category": "FOOD"}'
+
+# Article 5
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "International Pillow Fight Championship Draws Thousands in Feather-Fueled Frenzy", "content": "Pillow enthusiasts from around the globe descended upon a city square for the annual International Pillow Fight Championship, transforming the urban landscape into a feathery battlefield. Thousands of participants armed with fluffy pillows engaged in good-natured combat, creating a surreal spectacle of laughter and airborne feathers. The event, now a global sensation, promotes camaraderie and stress relief, turning a simple pillow fight into a major international attraction.", "userId": 5, "submissionDate": "2023-05-07T12:00:00", "articleStatus": "APPROVED", "picture": "picture5.png", "mediaUrl": "youtube.com", "category": "SCIENCE"}'
+
+# Article 6
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "AI-Powered Dogs Assist Firefighters in Brave Rescue Mission", "content": "In a groundbreaking rescue mission, specially trained AI-powered dogs have joined forces with firefighters to navigate treacherous environments and locate missing individuals. These four-legged heroes utilize advanced sensors and communication systems, enhancing their ability to save lives during emergencies.", "userId": 6, "submissionDate": "2023-06-05T12:00:00", "articleStatus": "APPROVED", "picture": "picture6.png", "mediaUrl": "youtube.com", "category": "OPINION"}'
+
+# Article 7
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "NASA Plans Mission to Harvest Resources from Asteroids, Paving the Way for Interstellar Travel", "content": "NASA is gearing up for an unprecedented mission to extract valuable resources from asteroids, marking a significant leap toward sustainable space exploration. The venture aims to unlock new possibilities for interstellar travel and resource utilization, bringing humanity one step closer to becoming a space-faring civilization.", "userId": 9, "submissionDate": "2023-06-30T12:00:00", "articleStatus": "APPROVED", "picture": "picture7.png", "mediaUrl": "youtube.com", "category": "SPORTS"}'
+
+# Article 8
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "Invisible Art Exhibition Leaves Visitors Wondering if Its Really There", "content": "Visitors to a unique art exhibition are left questioning reality as renowned artists showcase invisible artworks. The conceptual pieces challenge traditional notions of art, encouraging viewers to engage with their surroundings and imagine the unseen, sparking conversations about the nature of creativity and perception.", "userId": 12, "submissionDate": "2023-07-04T12:00:00", "articleStatus": "APPROVED", "picture": "picture8.png", "mediaUrl": "youtube.com", "category": "SCIENCE"}'
+
+# Article 9
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "Global Emoji Council Adds 50 New Emoticons, Reflecting Diverse Human Experiences", "content": "The Global Emoji Council has announced the addition of 50 new emoticons, reflecting the diverse range of human experiences and expressions. Embracing inclusivity, the new emojis aim to enhance digital communication by providing users with a more comprehensive set of symbols to convey emotions and ideas.", "userId": 11, "submissionDate": "2023-07-21T12:00:00", "articleStatus": "APPROVED", "picture": "picture9.png", "mediaUrl": "youtube.com", "category": "OPINION"}'
+
+# Article 10
+curl -X POST http://localhost:8080/article/create-article \
+-H "Content-Type: application/json" \
+-d '{"title": "Giant Rubber Duck Invasion Takes Over Citys Waterways, Delighting Residents", "content": "A whimsical invasion of giant rubber ducks has taken over the waterways of a bustling city, delighting residents and tourists alike. The oversized inflatable ducks, each with its own unique design, bring a sense of joy and playfulness to urban landscapes, creating a lighthearted atmosphere for all to enjoy.", "userId": 3, "submissionDate": "2023-08-17T12:00:00", "articleStatus": "APPROVED", "picture": "picture10.png", "mediaUrl": "youtube.com", "category": "TECHNOLOGY"}'
+
+2. Get Article Info:
+
+# Get Article Info for Article 1
+curl -X GET http://localhost:8080/article/article-info/1
+
+3. Update Article:
+
+# Update Article 1
+curl -X PUT http://localhost:8080/article/update-article/1 \
+-H "Content-Type: application/json" \
+-d '{"title": "Updated Scientists Discover New Species of Glowing Octopus", "content": "This is an updated content for the article about the discovery of a glowing octopus. The content has been modified to reflect the latest information.", "userId": 1, "submissionDate": "2023-01-25T12:00:00", "articleStatus": "PENDING", "picture": "updated_picture1.png", "mediaUrl": "http://example.com/updated_media", "category": "TRAVEL"}'
+
+4. Delete Article:
+
+# Delete Article 1
+curl -X DELETE http://localhost:8080/article/delete-article/1
+
+%%%% Comment %%%%
+
+1. Create Comment:
+
+# Create Comment 1
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 1, "userId": 1, "commentText": "Amazing article!", "commentDate": "2023-01-25T12:00:00", "parentCommentId": null}'
+
+# Create Comment 2
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 2, "userId": 2, "commentText": "This is nuts.", "commentDate": "2023-02-09T12:00:00", "parentCommentId": null}'
+
+# Create Comment 3
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 3, "userId": 1, "commentText": "Amazing article!", "commentDate": "2023-03-01T12:00:00", "parentCommentId": null}'
+
+# Create Comment 4
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 4, "userId": 2, "commentText": "This is nuts.", "commentDate": "2023-04-12T12:00:00", "parentCommentId": null}'
+
+# Create Comment 5
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 5, "userId": 1, "commentText": "Amazing article!", "commentDate": "2023-05-07T12:00:00", "parentCommentId": null}'
+
+# Create Comment 6
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 6, "userId": 2, "commentText": "This is nuts.", "commentDate": "2023-06-05T12:00:00", "parentCommentId": null}'
+
+# Create Comment 7
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 7, "userId": 1, "commentText": "Amazing article!", "commentDate": "2023-06-30T12:00:00", "parentCommentId": null}'
+
+# Create Comment 8
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 8, "userId": 2, "commentText": "This is nuts.", "commentDate": "2023-07-04T12:00:00", "parentCommentId": null}'
+
+# Create Comment 9
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 9, "userId": 1, "commentText": "Amazing article!", "commentDate": "2023-07-21T12:00:00", "parentCommentId": null}'
+
+# Create Comment 10
+curl -X POST http://localhost:8080/comment/create-comment \
+-H "Content-Type: application/json" \
+-d '{"articleId": 10, "userId": 2, "commentText": "This is nuts.", "commentDate": "2023-08-17T12:00:00", "parentCommentId": null}'
+
+2. Get Comment Info:
+
+# Get Comment Info for Comment 1
+curl -X GET http://localhost:8080/comment/comment-info/1
+
+3. Update Comment:
+
+# Update Comment 1
+curl -X PUT http://localhost:8080/comment/update-comment/1 \
+-H "Content-Type: application/json" \
+-d '{"articleId": 1, "userId": 1, "commentText": "Boo, this sucks.", "commentDate": "2023-01-25T12:00:00", "parentCommentId": null}'
+
+4. Delete Comment:
+
+# Delete Comment 1
+curl -X DELETE http://localhost:8080/comment/delete-comment/1
+
+%%%% Donation %%%%
+
+1. Create Donation
+
+# Create Donation 1
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 11, "donationComment": "You are doing amazing!", "donationDate": "2024-01-03T12:00:00", "donationAmount": 390}'
+
+# Create Donation 2
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 5, "donationComment": "Phenomenal job, keep it up!", "donationDate": "2024-01-05T12:00:00", "donationAmount": 55}'
+
+# Create Donation 3
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 19, "donationComment": "You are on fire, keep going!", "donationDate": "2024-01-08T12:00:00", "donationAmount": 810}'
+
+# Create Donation 4
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 12, "donationComment": "Outstanding work, keep pushing!", "donationDate": "2024-01-10T12:00:00", "donationAmount": 245}'
+
+# Create Donation 5
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 19, "donationComment": "Bravo, keep up the fantastic effort!", "donationDate": "2024-01-15T12:00:00", "donationAmount": 695}'
+
+# Create Donation 6
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 11, "donationComment": "You are crushing it!", "donationDate": "2024-01-18T12:00:00", "donationAmount": 130}'
+
+# Create Donation 7
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 12, "donationComment": "Incredible performance, keep it going!", "donationDate": "2024-01-23T12:00:00", "donationAmount": 30}'
+
+# Create Donation 8
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 5, "donationComment": "Outstanding job, keep up the momentum!", "donationDate": "2024-01-28T12:00:00", "donationAmount": 590}'
+
+# Create Donation 9
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 11, "donationComment": "Superb work, keep the excellence flowing!", "donationDate": "2024-01-31T12:00:00", "donationAmount": 70}'
+
+# Create Donation 10
+curl -X POST http://localhost:8080/donation/make-donation \
+-H "Content-Type: application/json" \
+-d '{"userId": 19, "donationComment": "You are nailing it, keep up the good work!", "donationDate": "2024-02-02T12:00:00", "donationAmount": 420}'
+
+2. Get Donation Info:
+
+# Get Donation Info for Donation 1
+curl -X GET http://localhost:8080/donation/donation-info/1
+
+3. Update Donation:
+
+# Update Donation 1
+curl -X PUT http://localhost:8080/donation/update-donation/1 \
+-H "Content-Type: application/json" \
+-d '{"userId": 11, "donationComment": "Updated donation comment.", "donationDate": "2024-01-03T12:00:00", "donationAmount": 400}'
+
+
+4. Delete Donation:
+
+# Delete Donation 1
+curl -X DELETE http://localhost:8080/donation/delete-donation/1
+
+
+
+
+
+
+
+
