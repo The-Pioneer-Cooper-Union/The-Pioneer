@@ -14,7 +14,7 @@ curl -X GET http://localhost:8080/user/user-info/1
 
 curl -X PUT http://localhost:8080/user/update-user/1 \
      -H "Content-Type: application/json" \
-     -d '{"username": "updatedUsername", "email": "updatedEmail@example.com", "passwordHash": "updatedPasswordHash", "userType": "Student", "major": "Computer Science", "graduationYear": 2025, "profilePic": "updatedPath/to/profile_pic.jpg", "shortBio": "Updated short bio about the user."}'
+     -d '{"username": "justin", "email": "justin@example.com", "passwordHash": "updatedPasswordHash", "userType": "Student", "major": "Computer Science", "graduationYear": 2025, "profilePic": "updatedPath/to/profile_pic.jpg", "shortBio": "Updated short bio about the user."}'
 
 4. Delete User:
 
